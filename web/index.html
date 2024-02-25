@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+    <div id = "infoTab">
+        <div id ="homeTab" onclick="home()"><p id="projDes">❌</p></div>
+        <h1><img id="logo" src="eros.png"></h1>
+
+  <p id ="projDes">
+  hellogellohello
+  </p>  
+      </div>
+
+      <div id ="question" onclick="faq()">
+        <p id="Q">❓</p>
+      </div>
+
+      <a href="/version2.html"><div id ="link">
+        <p id="Q">🖤</p>
+      </div>
+    </a>
+
+
+      <div id = "faqTab">
+        <div id ="homeTab" onclick="home()"><p id="projDes">❌</p></div>
+        <h1>PROCESS</h1>
+  <p id ="projDes">
+    ABAJHBSAJHBASJHBASJSBAJHABJAHJASBAIJSOIAJOS
+  </p>  
+      </div>
+
+
+
+      <script src="sketch.js" id="scriptTag"></script>
+     
+
+  <script src="blob.js"></script>
+</body>
+
+<script>
+    function home() {
+      var x = document.getElementById("infoTab");
+      var b = document.getElementById("faqTab");
+
+      if (x.style.display === "block") {
+        x.style.display = "block";
+        b.style.display = "none";
+      } else {
+        x.style.display = "none";
+        b.style.display = "none";
+      }
+    }
+
+    function faq() {
+      var b = document.getElementById("faqTab");
+
+      if (b.style.display === "none") {
+        b.style.display = "block";
+      } else {
+        b.style.display = "none";
+      }
+    }
+
+    document.getElementById("changeScript").addEventListener("click", function() {
+  var scriptTag = document.getElementById("scriptTag");
+  scriptTag.src = "sketch2.js";
+});
+
+</script>
+
+</html>
