@@ -1,8 +1,32 @@
 var blobs = []
 var song;
 
-
+let bpm= 0;
+let spl = 0;
 function setup() {
+   async function getData() {
+      const fetchInterval = setInterval(async () => {
+        const response = await fetch("http://localhost:3000/", {
+          Accept: "application/json",
+          mode: "cors",
+          // Add other headers if needed
+        }).then((response) => {
+          return response.json();
+        });
+        if(response.currentMessage){
+        // console.log(response.currentMessage,Object.values(response.currentMessage)[3],Object.values(response.currentMesssage)[8])
+        if(Object.values(response.currentMessage)[3]==="b"){
+          console.log(Object.values(response.currentMesssage)[8])
+          bpm = Object.values(response.currentMesssage)[8]
+        }
+          if(Object.values(response.currentMesssage)[3]==="s"){
+          spl = Object.values(response.currentMesssage)[8];}
+      
+        console.log(response);
+        }
+      }, 200);
+    }
+    getData();
     song = loadSound('https://cdn.glitch.global/d5c3b111-c8ba-4e87-96bb-7779c6f7023b/Water%20Flow%20Sound%202%20Minutes.mp3?v=1708809929758', function(){
         song.play(); // Play the song when it's loaded
       });
@@ -43,6 +67,7 @@ function draw() {
     let g = slider.value();
     let b = slider1.value();
     let c = slider2.value();
+    console.log(bpm,spl);
   background(51);
   if (mouseIsPressed == true) {
     song.play();// White
@@ -74,7 +99,7 @@ function draw() {
   // 1 = all reverb, 0 = no reverb
   reverb.drywet(dryWet);
   
-  console.log(dryWet);
+  // console.log(dryWet);
 
    // text(controlVol, 10, 20);
 }
