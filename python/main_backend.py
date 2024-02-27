@@ -40,7 +40,7 @@ try:
 #        if ser.in_waiting > 0:
 #            data = ser.readline()  # Read data from serial port
 #            print(data)
-#            send_sock.sendto(data, (remote_host, remote_port))  # Send data over UDP
+           send_sock.sendto(data, (remote_host, remote_port))  # Send data over UDP
 except KeyboardInterrupt:
     print("Program terminated by user")
 

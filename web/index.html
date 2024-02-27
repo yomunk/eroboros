@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
 
-  <link rel="stylesheet" type="text/css" href="/web/style.css">
-  <meta charset="utf-8" />
+  <body>
+    <div id="infoTab">
+      <div id="homeTab" onclick="home()"><p id="projDes">❌</p></div>
+      <h1><img id="logo" src="eros.png" /></h1>
 
-</head>
+      <p id="projDes">hellogellohello</p>
+    </div>
 
-<body>
-    <div id = "infoTab">
-        <div id ="homeTab" onclick="home()"><p id="projDes">❌</p></div>
-        <h1><img id="logo" src="eros.png"></h1>
+    <div id="question" onclick="faq()">
+      <p id="Q">❓</p>
+    </div>
 
-  <p id ="projDes">
-     <i>A Modular Synthesizer for Sex.</i> A non representational and abstracted way to co-play with a partner based off of a biometric feedback loop. Information is taken through the user with a wearable arm piece and is transmitted into movement on the other users toy of choice. Both users are transmitting and receiving information in tandem creating a feedback loop of pleasure. This website serves as an interface and an immersive platform with sound/visuals controlled by the data as well. There is a flexible mapping of inputs and outputs that can be modified for personal preferences. Project created at Pittsburgh OOOHack 2024 with Yoyo, Zev, Jude, Jenna, Ava, Bryn, Taylor, and Lex. 
-    
-      <br> <br> 
-      Our intentions behind this were to create a way to engage in pleasure that is outside of the regular human experience and ego. It allows an inherent form of privacy through obfuscation and can also be a way to decouple trauma from sex as being present in the same physical space is not necessary. This is a new and exciting way to engage with the body and experience sensations outside of the norm.
-  </p>  
-      </div>
-
-      <div id ="question" onclick="faq()">
-        <p id="Q">❓</p>
-      </div>
-
-      <a href="/web/version2.html"><div id ="link">
+    <a href="version2.html"
+      ><div id="link">
         <p id="Q">🖤</p>
       </div>
     </a>
 
+    <div id="faqTab">
+      <div id="homeTab" onclick="home()"><p id="projDes">❌</p></div>
+      <h1>PROCESS</h1>
+      <p id="projDes">ABAJHBSAJHBASJHBASJSBAJHABJAHJASBAIJSOIAJOS</p>
+    </div>
 
-      <div id = "faqTab">
-        <div id ="homeTab" onclick="home()"><p id="projDes">❌</p></div>
-        <h1>PROCESS</h1>
-  <p id ="projDes">
-  
-  </p>  
-      </div>
+    <script src="sketch.js" id="scriptTag"></script>
 
+    <script src="blob.js"></script>
+  </body>
 
-
-      <script src="sketch.js" id="scriptTag"></script>
-     
-
-  <script src="blob.js"></script>
-</body>
-
-<script>
+  <script>
     function home() {
       var x = document.getElementById("infoTab");
       var b = document.getElementById("faqTab");
@@ -76,12 +67,24 @@
         b.style.display = "none";
       }
     }
+    // async function getData() {
+    //   const fetchInterval = setInterval(async () => {
+    //     const response = await fetch("http://localhost:3000/", {
+    //       Accept: "application/json",
+    //       mode: "cors",
+    //       // Add other headers if needed
+    //     }).then((response) => {
+    //       return response.json();
+    //     });
+    //     console.log(response);
+    //   }, 200);
+    // }
 
-    document.getElementById("changeScript").addEventListener("click", function() {
-  var scriptTag = document.getElementById("scriptTag");
-  scriptTag.src = "sketch2.js";
-});
-
-</script>
-
+    document
+      .getElementById("changeScript")
+      .addEventListener("click", function () {
+        var scriptTag = document.getElementById("scriptTag");
+        scriptTag.src = "sketch2.js";
+      });
+  </script>
 </html>
